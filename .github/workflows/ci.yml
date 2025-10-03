@@ -1,0 +1,21 @@
+name: Moodle CI
+
+on:
+  push:            # запускается при любом push
+  pull_request:    # и при открытии PR
+
+jobs:
+  php-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3    # качает твой код из репозитория
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+
+      - name: Validate PHP syntax
+        run: php -l config.php       # проверим, что конфиг не поломан
