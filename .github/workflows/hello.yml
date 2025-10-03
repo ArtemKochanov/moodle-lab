@@ -2,7 +2,7 @@ name: Hello CI
 
 on: 
   push:
-  pull_requests:
+  pull_request:
 
 jobs: 
   say-hello:
