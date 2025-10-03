@@ -1,0 +1,16 @@
+name: Hello CI
+
+on: 
+  push:
+  pull_requests:
+
+jobs: 
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: chaeckout repository
+        uses: actions/checkout@v3
+
+      - name: say hello
+        uses: echo "Hello this is my first pipeline for devops practice on my work. Congratulations all in progress. Well done!"
